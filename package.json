@@ -1,4 +1,5 @@
 {
+  "homepage": "https://github.com/canbbu/nomad-movie-app.github.io.git",
   "name": "react-app-movie",
   "version": "0.1.0",
   "private": true,
@@ -38,6 +39,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "homapge": "https://canbbu.github.io/nomad-react-movie-app"
+  }
 }
