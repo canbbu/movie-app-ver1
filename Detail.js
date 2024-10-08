@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
-function Detail() {
+function Detail(year,coverImg, title, summary, genres ) {
   const [loading, setLoading] = useState(true);
   const [movies, setMovies] = useState([]);
   const { id } = useParams();
@@ -24,18 +24,17 @@ function Detail() {
       {loading ? (
         "loading..."
       ) : (
-        <div className="box">
-          <h1>{movies.title}</h1>
-          <div>
-            <img src={movies.medium_cover_image}></img>
-          </div>
-          <div style={{ textAlign: "center" }}>
-            rating: {movies.rating} | year:{movies.year} | runtime :{" "}
-            {movies.runtime} | genres:{" "}
-            {movies.genres.map((genre) => genre + ", ")}{" "}
-          </div>
-          <h5>{movies.description_full}</h5>
+        <div className="detail__container">
+        <div className="detail__poster">
+          <img src={coverImg} alt={title} />
         </div>
+        <div className="detail__info">
+          <h1>{title}</h1>
+          <h2>{genres.join(", ")}</h2>
+          <h3>{year}</h3>
+          <p>{summary}</p>
+        </div>
+      </div>
       )}
     </>
   );
